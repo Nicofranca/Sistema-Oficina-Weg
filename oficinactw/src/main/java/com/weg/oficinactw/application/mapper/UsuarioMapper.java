@@ -1,15 +1,16 @@
 package com.weg.oficinactw.application.mapper;
 
+import com.weg.oficinactw.application.dto.usuario.UsuarioRequestDTO;
 import com.weg.oficinactw.application.dto.usuario.UsuarioResponseDTO;
 import com.weg.oficinactw.domain.model.Usuario;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UsuarioMapper {
-    public Usuario requestToEntity(UsuarioResponseDTO usuarioResponseDTO){
+    public Usuario requestToEntity(UsuarioRequestDTO usuarioRequestDTO){
         return new Usuario(
-                usuarioResponseDTO.nome(),
-                usuarioResponseDTO.tipoUsuario()
+                usuarioRequestDTO.nome(),
+                usuarioRequestDTO.tipo()
         );
     }
 
