@@ -27,4 +27,8 @@ public class Usuario {
 
     @OneToMany(mappedBy = "ordem_servico")
     private OrdemServico ordemServico;
+
+    @ManyToOne
+    @JoinColumn(name = "turma_id")
+    private Turma turma;
 }

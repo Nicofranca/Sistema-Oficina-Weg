@@ -23,10 +23,10 @@ public class Turma {
     @Column
     private String nome;
 
-    @Column
-    private int quantidadeAlunos;
-
-    @OneToMany
-    @JoinColumn(name = "turma_id")
+    @OneToMany(mappedBy = "turma")
     private List<Usuario> alunos;
+
+    public int getQuantidadeAlnos(){
+        return (this.alunos != null) ? this.alunos.size() : 0;
+    }
 }

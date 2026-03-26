@@ -8,5 +8,5 @@ import java.util.List;
 public interface TurmaService {
     TurmaResponseDTO criarTurma(TurmaRequestDTO turmaRequestDTO);
     void matricularAluno (Long turmaId, Long alunoId);
-    List<TurmaResponseDTO> listarAlunos();
+    List<TurmaResponseDTO> listarTurmas();
 }
