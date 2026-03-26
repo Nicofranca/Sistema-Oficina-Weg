@@ -1,6 +1,6 @@
 package com.weg.oficinactw.domain.service;
 
-import com.weg.oficinactw.application.dto.ordemServico.OrdemServicoResponseDTO;
+import com.weg.oficinactw.application.dto.ordemServico.response.OrdemServicoResponseDTO;
 
 import java.util.List;
 

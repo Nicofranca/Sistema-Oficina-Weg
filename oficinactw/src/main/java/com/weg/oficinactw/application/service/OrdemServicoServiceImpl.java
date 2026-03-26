@@ -1,6 +1,6 @@
 package com.weg.oficinactw.application.service;
 
-import com.weg.oficinactw.application.dto.ordemServico.OrdemServicoResponseDTO;
+import com.weg.oficinactw.application.dto.ordemServico.response.OrdemServicoResponseDTO;
 import com.weg.oficinactw.domain.service.OrdemServicoService;
 import org.springframework.stereotype.Service;
 
