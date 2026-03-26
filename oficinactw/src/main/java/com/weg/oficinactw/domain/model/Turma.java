@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,7 +17,7 @@ import lombok.Setter;
 public class Turma {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
@@ -23,4 +25,8 @@ public class Turma {
 
     @Column
     private int quantidadeAlunos;
+
+    @OneToMany
+    @JoinColumn(name = "turma_id")
+    private List<Usuario> alunos;
 }

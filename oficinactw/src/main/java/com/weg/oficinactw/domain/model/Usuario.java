@@ -1,5 +1,6 @@
 package com.weg.oficinactw.domain.model;
 
+import com.weg.oficinactw.domain.model.enums.TipoUsuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,12 +16,15 @@ import lombok.Setter;
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
     private String nome;
 
-    @Column
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private TipoUsuario tipoUsuario;
+
+    @OneToMany(mappedBy = "ordem_servico")
+    private OrdemServico ordemServico;
 }

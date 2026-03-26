@@ -1,21 +1,24 @@
 package com.weg.oficinactw.domain.model;
 
+import com.weg.oficinactw.domain.model.enums.StatusOrdemServico;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "equipamento")
+@Table(name = "ordem_servico")
 public class OrdemServico {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
@@ -25,5 +28,22 @@ public class OrdemServico {
     private String defeitoRelatado;
 
     @Column
-    private String status;
+    private String materiaisUsados;
+
+    @Column
+    private String conclusaoTecnica;
+
+    @Enumerated(EnumType.STRING)
+    private StatusOrdemServico statusOrdemServico;
+
+    @ManyToOne
+    private Usuario professorResponsavel;
+
+    @JoinTable(
+            name = "os_alunos",
+            joinColumns = @JoinColumn(name = "os_id"),
+            inverseJoinColumns = @JoinColumn(name = "aluno_id")
+    )
+    private List<Usuario> alunosEscalados;
+
 }
