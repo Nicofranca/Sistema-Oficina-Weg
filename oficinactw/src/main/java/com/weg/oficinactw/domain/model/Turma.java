@@ -29,4 +29,8 @@ public class Turma {
     public int getQuantidadeAlnos(){
         return (this.alunos != null) ? this.alunos.size() : 0;
     }
+
+    public Turma(String nome) {
+        this.nome = nome;
+    }
 }

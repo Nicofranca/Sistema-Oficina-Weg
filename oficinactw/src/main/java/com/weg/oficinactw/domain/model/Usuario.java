@@ -31,4 +31,9 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name = "turma_id")
     private Turma turma;
+
+    public Usuario(String nome, TipoUsuario tipoUsuario) {
+        this.nome = nome;
+        this.tipoUsuario = tipoUsuario;
+    }
 }
