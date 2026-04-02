@@ -120,3 +120,10 @@ spring.datasource.password=mysqlPW
 spring.jpa.hibernate.ddl-auto=update
 ```
 
+## Testes no Postman
+
+Para testar, basta:
+- Baixar o JSON de testes ```Oficina CTW - Testes.postman_collection.json```.
+- Ir para o Postman e clicar no botao ```import```.
+- Rodar os testes de acordo com a ordem lógica de criacão de cada um
+
