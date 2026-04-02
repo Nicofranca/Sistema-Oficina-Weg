@@ -1,11 +1,11 @@
 package com.weg.oficinactw.infra.web.controller;
 
+import com.weg.oficinactw.application.dto.ordemServico.request.AberturaOrdemServicoRequestDTO;
+import com.weg.oficinactw.application.dto.ordemServico.request.ExecucaoOrdemServicoRequestDTO;
+import com.weg.oficinactw.application.dto.ordemServico.request.FinalizacaoOrdemServicoRequestDTO;
 import com.weg.oficinactw.application.dto.ordemServico.response.OrdemServicoResponseDTO;
 import com.weg.oficinactw.domain.service.OrdemServicoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,18 +20,18 @@ public class OrdemServicoController {
     }
 
     @PostMapping
-    public OrdemServicoResponseDTO abrirOrdemServico(Long professorId, List<Long> alunosId, String equipamento, String defeito) {
-        return ordemServicoService.abrirOrdemServico(professorId, alunosId, equipamento, defeito);
+    public OrdemServicoResponseDTO abrirOrdemServico(@RequestBody AberturaOrdemServicoRequestDTO aberturaOrdemServicoRequestDTO) {
+        return ordemServicoService.abrirOrdemServico(aberturaOrdemServicoRequestDTO);
     }
 
     @PostMapping
-    public OrdemServicoResponseDTO registrarExecucao(Long ordemServicoId, Long alunoId, String materiais, String laudo) {
-        return ordemServicoService.registrarExecucao(ordemServicoId, alunoId, materiais, laudo);
+    public OrdemServicoResponseDTO registrarExecucao(@RequestBody ExecucaoOrdemServicoRequestDTO execucaoOrdemServicoRequestDTO) {
+        return ordemServicoService.registrarExecucao(execucaoOrdemServicoRequestDTO);
     }
 
     @PostMapping
-    public OrdemServicoResponseDTO finalizarOrdemServico(Long ordemServicoId, Long professorId) {
-        return ordemServicoService.finalizarOrdemServico(ordemServicoId, professorId);
+    public OrdemServicoResponseDTO finalizarOrdemServico(@RequestBody FinalizacaoOrdemServicoRequestDTO finalizacaoOrdemServicoRequestDTO) {
+        return ordemServicoService.finalizarOrdemServico(finalizacaoOrdemServicoRequestDTO);
     }
 
     @GetMapping

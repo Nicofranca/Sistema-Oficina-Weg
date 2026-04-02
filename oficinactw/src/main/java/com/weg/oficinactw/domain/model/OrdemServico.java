@@ -48,4 +48,18 @@ public class OrdemServico {
     )
     private List<Usuario> alunosEscalados;
 
+    public OrdemServico(List<Usuario> alunosEscalados, Usuario professorResponsavel, StatusOrdemServico statusOrdemServico, String nome, String defeitoRelatado) {
+        this.alunosEscalados = alunosEscalados;
+        this.professorResponsavel = professorResponsavel;
+        this.statusOrdemServico = statusOrdemServico;
+        this.nome = nome;
+        this.defeitoRelatado = defeitoRelatado;
+    }
+
+    public OrdemServico(List<Usuario> alunosEscalados, StatusOrdemServico statusOrdemServico, String conclusaoTecnica, String materiaisUsados) {
+        this.alunosEscalados = alunosEscalados;
+        this.statusOrdemServico = statusOrdemServico;
+        this.conclusaoTecnica = conclusaoTecnica;
+        this.materiaisUsados = materiaisUsados;
+    }
 }
