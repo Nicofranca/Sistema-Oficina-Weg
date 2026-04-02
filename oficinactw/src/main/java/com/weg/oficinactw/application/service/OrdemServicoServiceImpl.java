@@ -101,6 +101,8 @@ public class OrdemServicoServiceImpl implements OrdemServicoService {
 
     @Override
     public List<OrdemServicoResponseDTO> listarOSAtivas() {
-        return List.of();
+        return ordemServicoRepositoryJPA.findAll()
+                .stream().map(ordemServicoMapper::requestToEntity)
+                .toList();
     }
 }
