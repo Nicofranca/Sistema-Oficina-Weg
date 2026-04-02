@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,8 +27,8 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     private TipoUsuario tipoUsuario;
 
-    @OneToMany(mappedBy = "ordem_servico")
-    private OrdemServico ordemServico;
+    @OneToMany(mappedBy = "professorResponsavel")
+    private List<OrdemServico> ordensServico;
 
     @ManyToOne
     @JoinColumn(name = "turma_id")

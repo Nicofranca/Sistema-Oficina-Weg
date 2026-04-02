@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface UsuarioRepositoryJPA extends JpaRepository<Usuario, Long> {
-    Usuario findByProfessor(Long id);
     List<Usuario> findByTipoUsuario(TipoUsuario tipoUsuario);
 }

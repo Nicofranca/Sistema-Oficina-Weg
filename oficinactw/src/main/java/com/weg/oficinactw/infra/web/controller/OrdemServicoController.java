@@ -19,17 +19,17 @@ public class OrdemServicoController {
         this.ordemServicoService = ordemServicoService;
     }
 
-    @PostMapping
+    @PostMapping("/abrir")
     public OrdemServicoResponseDTO abrirOrdemServico(@RequestBody AberturaOrdemServicoRequestDTO aberturaOrdemServicoRequestDTO) {
         return ordemServicoService.abrirOrdemServico(aberturaOrdemServicoRequestDTO);
     }
 
-    @PostMapping
+    @PostMapping("/execucao")
     public OrdemServicoResponseDTO registrarExecucao(@RequestBody ExecucaoOrdemServicoRequestDTO execucaoOrdemServicoRequestDTO) {
         return ordemServicoService.registrarExecucao(execucaoOrdemServicoRequestDTO);
     }
 
-    @PostMapping
+    @PostMapping("/finalizar")
     public OrdemServicoResponseDTO finalizarOrdemServico(@RequestBody FinalizacaoOrdemServicoRequestDTO finalizacaoOrdemServicoRequestDTO) {
         return ordemServicoService.finalizarOrdemServico(finalizacaoOrdemServicoRequestDTO);
     }

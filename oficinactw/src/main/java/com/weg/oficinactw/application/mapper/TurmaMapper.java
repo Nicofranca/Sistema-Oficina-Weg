@@ -24,7 +24,7 @@ public class TurmaMapper {
         );
     }
 
-    public TurmaResponseDTO requestToEntity(Turma turma){
+    public TurmaResponseDTO responseToEntity(Turma turma){
         return new TurmaResponseDTO(
                 turma.getId(),
                 turma.getNome(),

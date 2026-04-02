@@ -21,7 +21,7 @@ public class TurmaController {
         return turmaService.criarTurma(turmaRequestDTO);
     }
 
-    @PostMapping("/{id}") // pega o id da turma na URL e o id do aluno no body
+    @PostMapping("/{turmaId}") // pega o id da turma na URL e o id do aluno no body
     public void matricularAluno(@PathVariable Long turmaId, @RequestBody Long alunoId ) {
         turmaService.matricularAluno(turmaId, alunoId);
     }

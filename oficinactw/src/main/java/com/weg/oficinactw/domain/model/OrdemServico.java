@@ -40,7 +40,7 @@ public class OrdemServico {
     @JoinColumn(name = "professor_id")
     private Usuario professorResponsavel;
 
-    @ManyToOne
+    @ManyToMany
     @JoinTable(
             name = "os_alunos",
             joinColumns = @JoinColumn(name = "os_id"),

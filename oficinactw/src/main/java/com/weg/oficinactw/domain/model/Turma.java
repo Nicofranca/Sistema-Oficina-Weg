@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -24,7 +25,7 @@ public class Turma {
     private String nome;
 
     @OneToMany(mappedBy = "turma")
-    private List<Usuario> alunos;
+    private List<Usuario> alunos = new ArrayList<>();
 
     public int getQuantidadeAlnos(){
         return (this.alunos != null) ? this.alunos.size() : 0;

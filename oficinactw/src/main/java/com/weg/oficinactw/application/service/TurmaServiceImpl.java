@@ -33,7 +33,7 @@ public class TurmaServiceImpl implements TurmaService {
 
             turmaRepositoryJPA.save(turma);
 
-            return turmaMapper.requestToEntity(turma);
+            return turmaMapper.responseToEntity(turma);
         } catch (RuntimeException e) {
             throw new RuntimeException(e);
         }
@@ -66,7 +66,7 @@ public class TurmaServiceImpl implements TurmaService {
     public List<TurmaResponseDTO> listarTurmas() {
         try {
             return turmaRepositoryJPA.findAll().stream()
-                    .map(turmaMapper::requestToEntity)
+                    .map(turmaMapper::responseToEntity)
                     .toList();
         } catch (RuntimeException e) {
             throw new RuntimeException(e);

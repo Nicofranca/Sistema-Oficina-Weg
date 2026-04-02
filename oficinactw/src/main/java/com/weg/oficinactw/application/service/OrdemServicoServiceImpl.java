@@ -96,6 +96,8 @@ public class OrdemServicoServiceImpl implements OrdemServicoService {
 
         ordemServico.setStatusOrdemServico(StatusOrdemServico.CONCLUIDA);
 
+        ordemServicoRepositoryJPA.save(ordemServico);
+
         return ordemServicoMapper.requestToEntity(ordemServico);
     }
 
