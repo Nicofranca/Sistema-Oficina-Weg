@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "d6f177e5-ebe4-4adc-8604-99a286217c16",
+		"name": "Oficina CTW - Testes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47766939",
+		"_collection_link": "https://nicollas-franca-7484293.postman.co/workspace/N%C3%ADcollas-Gabriel-Bartko-de-Fran~20d143fd-49d1-4322-8163-733e9f205024/collection/47766939-d6f177e5-ebe4-4adc-8604-99a286217c16?action=share&source=collection_link&creator=47766939"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Criar Usuario - Professor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Ricardo Mestre\",\n  \"tipo\": \"PROFESSOR\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuario",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Usuario - Aluno",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Carlos Aluno\",\n  \"tipo\": \"ALUNO\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuario",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuario/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Alunos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuario",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Turma",
+			"item": [
+				{
+					"name": "Criar Turma",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Cibersistemas T1\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/turma",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"turma"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Matricular Aluno na Turma",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "2"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/turma/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"turma",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Turmas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/turma",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"turma"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ordem de Servico",
+			"item": [
+				{
+					"name": "Abrir Ordem de Servico",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"equipamento\": \"Torno CNC\",\n  \"defeitoRelatado\": \"Motor com ruído anormal ao ligar\",\n  \"professorId\": 1,\n  \"alunosId\": [2, 3]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ordemservico/abrir",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ordemservico",
+								"abrir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Execucao",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ordemId\": 1,\n  \"alunosId\": [2, 3],\n  \"materiaisUsados\": \"Rolamento 6205, graxa industrial 200g\",\n  \"conclusao\": \"Substituído rolamento dianteiro do motor. Ruído eliminado após teste.\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ordemservico/execucao",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ordemservico",
+								"execucao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Finalizar Ordem de Servico",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ordemId\": 1,\n  \"professorId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ordemservico/finalizar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ordemservico",
+								"finalizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Ordens de Servico Ativas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ordemservico",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ordemservico"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
